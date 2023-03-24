@@ -1,22 +1,21 @@
-precoQUartos = []
-quartos = []
-quarto = False
-participantes, orcamento, QntdHotel, QntdSemanas = map(int, input().split())
+rooms = []
+room = False
+participants, budget, hotel_qnt, weeks_qnt = map(int, input().split())
 
-for i in range(QntdHotel):
-    precoPer = int(input())
-    intNCamas = list(map(int, input().split()))
-    precoTotal = participantes * precoPer
-    for k in intNCamas:
-        if participantes <= k and precoTotal <= orcamento:
-            quartos.append(precoTotal)
-            set(quartos)
-            quarto = True
-menor_preco = 500000
-for g in quartos:
-    if g < menor_preco:
-        menor_preco = g
-if quarto:
-    print(menor_preco)
+for i in range(hotel_qnt):
+    pricePerPerson = int(input())
+    intNBeds = list(map(int, input().split()))
+    total_price = participants * pricePerPerson
+    for k in intNBeds:
+        if participants <= k and total_price <= budget:
+            rooms.append(total_price)
+            set(rooms)
+            room = True
+best_price = 500000
+for g in rooms:
+    if g < best_price:
+        best_price = g
+if room:
+    print(best_price)
 else:
     print("stay home")

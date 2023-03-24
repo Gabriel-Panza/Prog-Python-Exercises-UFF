@@ -1,15 +1,15 @@
-mensagem_criptograda=input()
-codigo=input()
-possibilidadesDeCodigo=0
+coded_message=input()
+code=input()
+code_tries=0
 
-for i in range(len(mensagem_criptograda)-len(codigo)+1):
+for i in range(len(coded_message)-len(code)+1):
     pos=0
-    verificador=0
-    for j in range(i, i+len(codigo)):
-        if mensagem_criptograda[j]==codigo[pos]:
-            verificador+=1
+    verify=0
+    for j in range(i, i+len(code)):
+        if coded_message[j]==code[pos]:
+            verify+=1
             break
         pos+=1
-    if verificador==0:
-        possibilidadesDeCodigo+=1
-print(possibilidadesDeCodigo)
+    if verify==0:
+        code_tries+=1
+print(code_tries)

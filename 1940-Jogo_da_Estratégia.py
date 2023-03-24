@@ -1,10 +1,10 @@
-Jogadores, Rodadas = [int(x) for x in input().split()]
-entrada = list(map(int, input().split()))
-pontos = [0] * Jogadores
+players, rounds = [int(x) for x in input().split()]
+entry = list(map(int, input().split()))
+points = [0] * players
 
-for i in range(Jogadores):
-    pontos[i] = sum(entrada[i::Jogadores])
+for i in range(players):
+    points[i] = sum(entry[i::players])
     
-pontos = pontos[::-1]
-vencedor = Jogadores - pontos.index(max(pontos))
-print(vencedor)
+points = points[::-1]
+winner = players - points.index(max(points))
+print(winner)

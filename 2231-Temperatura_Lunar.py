@@ -1,46 +1,43 @@
-def CriaTemp(temperatura):
-    for k in range(N_Temperaturas):
-        temperatura.append(int(input()))
+def CreateTemp(temperature):
+    for k in range(N_Temperatures):
+        temperature.append(int(input()))
         
-def SomaDeTemperaturas(temperatura,somas,soma):
-    for j in range(M_intervalos):
+def AdditionTemp(temperatura,somas,soma):
+    for j in range(M_intervals):
         soma += temperatura[j]
     somas.append(soma)
-    for i in range(N_Temperaturas-M_intervalos):
-        soma += temperatura[i+M_intervalos] - temperatura[i]
+    for i in range(N_Temperatures-M_intervals):
+        soma += temperatura[i+M_intervals] - temperatura[i]
         somas.append(soma)
         
-def DefineMaiorMenor(maior,menor,somas):
-    for l in somas:
-        if l > maior:
-            maior = l
-        if l < menor:
-            menor = l    
-    # Salvo os maiores e menores
-    lista_menores_maiores.append(int(menor/M_intervalos))
-    lista_menores_maiores.append(int(maior/M_intervalos))    
+def SetBiggerLower(bigger,lower,adds):
+    for l in adds:
+        if l > bigger:
+            bigger = l
+        if l < lower:
+            lower = l    
+    list_lowers_biggers.append(int(lower/M_intervals))
+    list_lowers_biggers.append(int(bigger/M_intervals))    
         
 
-lista_menores_maiores = []
+list_lowers_biggers = []
 cont=1
-N_Temperaturas, M_intervalos = map(int, input().split())
-while N_Temperaturas!=0 and M_intervalos!=0:
-    temperatura = []
-    somas= []
-    soma=0
-    maior= -201
-    menor = 201
+N_Temperatures, M_intervals = map(int, input().split())
+while N_Temperatures!=0 and M_intervals!=0:
+    temperature = []
+    adds = []
+    add = 0
+    bigger = -201
+    lower = 201
     
-    # Chamo as funçoes
-    CriaTemp(temperatura)
-    SomaDeTemperaturas(temperatura,somas,soma)    
-    DefineMaiorMenor(maior,menor,somas)
+    CreateTemp(temperature)
+    AdditionTemp(temperature,adds,add)    
+    SetBiggerLower(bigger,lower,adds)
     
-    # Repito o loop
-    N_Temperaturas, M_intervalos = map(int, input().split())
+    N_Temperatures, M_intervals = map(int, input().split())
 
-for i in range(0,len(lista_menores_maiores),2):
-    print("Teste {}".format(cont))
-    print(lista_menores_maiores[i], lista_menores_maiores[i+1])
+for i in range(0,len(list_lowers_biggers),2):
+    print("Test {}".format(cont))
+    print(list_lowers_biggers[i], list_lowers_biggers[i+1])
     print()
     cont+=1

@@ -1,17 +1,17 @@
 a, b, c, d = map(int, input().split())
 
 if b == d:
-    numerador = a+c
-    divisor = b
+    number = a+c
+    div = b
 else:
     mdc = b*d
     x = int(mdc/b) * a
     y = int(mdc/d) * c
-    numerador = x+y
-    divisor = mdc
+    number = x+y
+    div = mdc
 
 for i in range(2,101):
-    while numerador%i==0 and divisor%i==0:
-        numerador = int(numerador/i)
-        divisor = int(divisor/i)
-print(numerador, divisor)
+    while number%i==0 and div%i==0:
+        number = int(number/i)
+        div = int(div/i)
+print(number, div)

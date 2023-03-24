@@ -1,22 +1,15 @@
-qntd_termos = int(input())
-vetor = []
+qnt_elements = int(input())
+vector = []
 
-for i in range(qntd_termos):
+for i in range(qnt_elements):
     x = int(input())
-    vetor.append(x)
+    vector.append(x)
 
-# for i in range(qntd_termos):
-# ----for j in range(qntd_termos):
-# --------if vetor[i] < vetor[j]:
-# ------------termo_x = vetor[i]
-# ------------vetor[i] = vetor[j]
-# ------------vetor[j] = termo_x
-
-vetor.sort()
-for i in vetor:
+vector.sort()
+for i in vector:
     if (i % 2) == 0:
         print(i)
 
-for i in range(len(vetor)):
-    if (vetor[len(vetor) - i - 1] % 2) != 0:
-        print(vetor[len(vetor) - i - 1])
+for i in range(len(vector)):
+    if (vector[len(vector) - i - 1] % 2) != 0:
+        print(vector[len(vector) - i - 1])

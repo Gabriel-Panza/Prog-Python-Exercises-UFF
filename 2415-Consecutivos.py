@@ -1,13 +1,13 @@
-N_qntd_numeros = int(input())
-N_numeros = list(map(int, input().split()))
-maiorSequencia=[]
+N_qnt_numbers = int(input())
+N_numbers = list(map(int, input().split()))
+BiggerSequencial=[]
 cont=1
-for i in range(N_qntd_numeros-1):
-    if N_numeros[i]==N_numeros[i+1]:
+for i in range(N_qnt_numbers-1):
+    if N_numbers[i]==N_numbers[i+1]:
         cont+=1
     else:
-        maiorSequencia.append(cont)
+        BiggerSequencial.append(cont)
         cont=1
-maiorSequencia.append(cont)
-maiorSequencia.sort()
-print(maiorSequencia[-1])
+BiggerSequencial.append(cont)
+BiggerSequencial.sort()
+print(BiggerSequencial[-1])

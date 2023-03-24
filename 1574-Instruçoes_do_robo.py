@@ -1,22 +1,22 @@
-qntd_de_sequencias = int(input())
-movimentos = []
-posicao_robo = []
-for i in range(qntd_de_sequencias):
-    distancia_percorrida = 0
+sequencial_qnt = int(input())
+movements = []
+robot_position = []
+for i in range(sequencial_qnt):
+    distance_advanced = 0
     n = int(input())
     for j in range(n):
-        instrucao = input()
-        if instrucao == "LEFT":
-            movimentos.append(-1)
-        elif instrucao == "RIGHT":
-            movimentos.append(1)
+        instruction = input()
+        if instruction == "LEFT":
+            movements.append(-1)
+        elif instruction == "RIGHT":
+            movements.append(1)
         else:
             for b in range(1, n):
-                if instrucao == "SAME AS {}".format(b):
-                    movimentos.append(movimentos[b - 1])
-    for k in movimentos:
-        distancia_percorrida += k
-    posicao_robo.append(distancia_percorrida)
-    movimentos.clear()
-for h in posicao_robo:
+                if instruction == "SAME AS {}".format(b):
+                    movements.append(movements[b - 1])
+    for k in movements:
+        distance_advanced += k
+    robot_position.append(distance_advanced)
+    movements.clear()
+for h in robot_position:
     print(h)

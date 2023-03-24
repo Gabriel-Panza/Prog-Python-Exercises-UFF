@@ -1,30 +1,26 @@
-# Definindo nossas variaveis
-N_pinos, altura_M = map(int, input().split())
-movimentos = 0
-altura_dos_pinos = list(map(int, input().split()))
+N_pins, height_M = map(int, input().split())
+movements = 0
+pins_height = list(map(int, input().split()))
 
-# Indo do primeiro ao ultimo
-for i in range(len(altura_dos_pinos)):
-    while altura_dos_pinos[i] != altura_M:
-        if altura_dos_pinos[i] < altura_M:
-            altura_dos_pinos[i] += 1
-            altura_dos_pinos[i + 1] += 1
-            movimentos += 1
+for i in range(len(pins_height)):
+    while pins_height[i] != height_M:
+        if pins_height[i] < height_M:
+            pins_height[i] += 1
+            pins_height[i + 1] += 1
+            movements += 1
 
-        elif altura_dos_pinos[i] > altura_M:
-            altura_dos_pinos[i] -= 1
-            altura_dos_pinos[i + 1] -= 1
-            movimentos += 1
+        elif pins_height[i] > height_M:
+            pins_height[i] -= 1
+            pins_height[i + 1] -= 1
+            movements += 1
 
-# Checando se o ultimo número está igual a altura limite que nem seus antecessores
-while altura_dos_pinos[-1] != altura_M:
-    if altura_dos_pinos[-1] < altura_M:
-        altura_dos_pinos[-1] += 1
-        movimentos += 1
+while pins_height[-1] != height_M:
+    if pins_height[-1] < height_M:
+        pins_height[-1] += 1
+        movements += 1
 
-    elif altura_dos_pinos[-1] > altura_M:
-        altura_dos_pinos[-1] -= 1
-        movimentos += 1
+    elif pins_height[-1] > height_M:
+        pins_height[-1] -= 1
+        movements += 1
 
-# Printando os movimentos
-print(movimentos)
+print(movements)

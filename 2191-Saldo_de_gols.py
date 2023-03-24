@@ -1,47 +1,47 @@
-def compare(maior, saldo, ini, fim):
-    sizeM = maior[2] - maior[1]
-    size = fim - ini
-    if saldo > maior[0]:
-        maior = [saldo, ini, fim]
-    elif saldo == maior[0] and size > sizeM:
-        maior = [saldo, ini, fim]
-    return maior
+def compare(higher, saldo, start, end):
+    sizeM = higher[2] - higher[1]
+    size = end - start
+    if saldo > higher[0]:
+        higher = [saldo, start, end]
+    elif saldo == higher[0] and size > sizeM:
+        higher = [saldo, start, end]
+    return higher
 
 
 def main():
     n = int(input())
     case = 0
     while n != 0:
-        lista = [None]
-        valor = -51
-        ini, fim = 1, 1
-        maior = [valor, 1, 1]
+        list = [None]
+        value = -51
+        start, end = 1, 1
+        higher = [value, 1, 1]
         while n != 0:
-            jogo = list(map(int, input().split()))
-            saldo = jogo[0] - jogo[1]
-            result = saldo + valor
-            indice = len(lista)
+            game = list(map(int, input().split()))
+            saldo = game[0] - game[1]
+            result = saldo + value
+            index = len(list)
             if saldo > result:
-                if saldo > valor:
-                    valor = saldo
-                    ini = indice
-                    fim = indice
+                if saldo > value:
+                    value = saldo
+                    start = index
+                    end = index
             else:
-                if valor <= result:
-                    valor = result
-                    fim = indice
+                if value <= result:
+                    value = result
+                    end = index
                 else:
-                    fim = indice - 1
-                    valor = result
-            maior = compare(maior, valor, ini, fim)
-            lista.append(saldo)
+                    end = index - 1
+                    value = result
+            higher = compare(higher, value, start, end)
+            list.append(saldo)
             n -= 1
         case += 1
-        print(f"Teste {case}")
-        if maior[0] <= 0:
-            print("nenhum", end="\n\n")
+        print(f"Test {case}")
+        if higher[0] <= 0:
+            print("none", end="\n\n")
         else:
-            print(maior[1], maior[2], end="\n\n")
+            print(higher[1], higher[2], end="\n\n")
         n = int(input())
 
 main()

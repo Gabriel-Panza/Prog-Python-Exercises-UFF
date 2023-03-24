@@ -1,13 +1,13 @@
-qntd_de_palavras = int(input())
+qnt_of_words = int(input())
 
-for i in range(qntd_de_palavras):
-    palavra = input()
-    qntd_que_avanca = int(input())
-    palavra_decodificada = ""
-    for j in palavra:
-        letra = ord(j)-qntd_que_avanca
-        if letra < 65:
-            palavra_decodificada += chr(91-(65-letra))
+for i in range(qnt_of_words):
+    word = input()
+    advance_qnt = int(input())
+    word_decodificated = ""
+    for j in word:
+        letter = ord(j)-advance_qnt
+        if letter < 65:
+            word_decodificated += chr(91-(65-letter))
         else:
-            palavra_decodificada += chr(letra)
-    print(palavra_decodificada)
+            word_decodificated += chr(letter)
+    print(word_decodificated)

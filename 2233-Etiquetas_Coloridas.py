@@ -1,71 +1,71 @@
-def ConversaoHexa_Decimal(R, G, B):
+def ConversionHexa_Decimal(R, G, B):
     R_decimal = 0
     G_decimal = 0
     B_decimal = 0
     
-    for i, elemento in enumerate(R): 
-        if elemento == 'a':
+    for i, element in enumerate(R): 
+        if element == 'a':
             R_decimal += 10*16**(len(R)-1 - i)                    
-        elif elemento == 'b':
+        elif element == 'b':
             R_decimal += 11*16**(len(R)-1 - i)
-        elif elemento == 'c':
+        elif element == 'c':
             R_decimal += 12*16**(len(R)-1 - i)
-        elif elemento == 'd':
+        elif element == 'd':
             R_decimal += 13*16**(len(R)-1 - i)
-        elif elemento == 'e':
+        elif element == 'e':
             R_decimal += 14*16**(len(R)-1 - i)
-        elif elemento == 'f':
+        elif element == 'f':
             R_decimal += 15*16**(len(R)-1 - i)
         else:
-            R_decimal += int(elemento)*16**(len(R)-1 - i)
+            R_decimal += int(element)*16**(len(R)-1 - i)
 
-    for i, elemento in enumerate(G):
-        if elemento == 'a':
+    for i, element in enumerate(G):
+        if element == 'a':
             G_decimal += 10*16**(len(G)-1 - i)                    
-        elif elemento == 'b':
+        elif element == 'b':
             G_decimal += 11*16**(len(G)-1 - i)
-        elif elemento == 'c':
+        elif element == 'c':
             G_decimal += 12*16**(len(G)-1 - i)
-        elif elemento == 'd':
+        elif element == 'd':
             G_decimal += 13*16**(len(G)-1 - i)
-        elif elemento == 'e':
+        elif element == 'e':
             G_decimal += 14*16**(len(G)-1 - i)
-        elif elemento == 'f':
+        elif element == 'f':
             G_decimal += 15*16**(len(G)-1 - i)
         else:
-            G_decimal += int(elemento)*16**(len(G)-1 - i)
+            G_decimal += int(element)*16**(len(G)-1 - i)
 
-    for i, elemento in enumerate(B):
-        if elemento == 'a':
+    for i, element in enumerate(B):
+        if element == 'a':
             B_decimal += 10*16**(len(B)-1 - i)            
-        elif elemento == 'b':
+        elif element == 'b':
             B_decimal += 11*16**(len(B)-1 - i)
-        elif elemento == 'c':
+        elif element == 'c':
             B_decimal += 12*16**(len(B)-1 - i)
-        elif elemento == 'd':
+        elif element == 'd':
             B_decimal += 13*16**(len(B)-1 - i)
-        elif elemento == 'e':
+        elif element == 'e':
             B_decimal += 14*16**(len(B)-1 - i)
-        elif elemento == 'f':
+        elif element == 'f':
             B_decimal += 15*16**(len(B)-1 - i)
         else:
-            B_decimal += int(elemento)*16**(len(B)-1 - i)
+            B_decimal += int(element)*16**(len(B)-1 - i)
 
     return(R_decimal, G_decimal, B_decimal)
     
 
-def ConversaoDecimal_Hexa(resultado):
-    convertido = []
-    while resultado > 0:
-        sub = resultado
-        resultado = resultado // 16
-        restinho = int(sub - (resultado * 16))
-        convertido.append(restinho)
+def ConversionDecimal_Hexa(result):
+    convert = []
+    while result > 0:
+        sub = result
+        result = result // 16
+        rest = int(sub - (result * 16))
+        convert.append(rest)
 
-    convertido.reverse()
+    convert.reverse()
 
     hexa = str()
-    for i in convertido:
+    for i in convert:
         if i > 9:
                 hexa += str(hexadecimal[i])
         else:
@@ -77,16 +77,16 @@ R = list(input())
 G = list(input())
 B = list(input())
 
-R_decimal , G_decimal , B_decimal = (ConversaoHexa_Decimal(R, G, B))
+R_decimal , G_decimal , B_decimal = (ConversionHexa_Decimal(R, G, B))
 
-resultadoR = 1
+resultR = 1
 
 if G_decimal > R_decimal:
-    print(resultadoR)
+    print(resultR)
 else:
-    resultadoG = (R_decimal//G_decimal)**2
+    resultG = (R_decimal//G_decimal)**2
     if B_decimal > G_decimal:
-        print(ConversaoDecimal_Hexa(resultadoR+resultadoG))
+        print(ConversionDecimal_Hexa(resultR+resultG))
     else:
-        resultadoB = ((G_decimal//B_decimal)**2) * (resultadoG)
-        print(ConversaoDecimal_Hexa(resultadoR+resultadoG+resultadoB))
+        resultB = ((G_decimal//B_decimal)**2) * resultG
+        print(ConversionDecimal_Hexa(resultR+resultG+resultB))

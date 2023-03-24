@@ -1,22 +1,22 @@
 N_elem = int(input())
-elem_sequencia = list(map(int, input().split()))
-blocos = []
-lista_de_blocos = []
-razao = elem_sequencia[1] - elem_sequencia[0]
-blocos.append(elem_sequencia[0])
+elem_sequencial = list(map(int, input().split()))
+blocks = []
+list_of_blocks = []
+reason = elem_sequencial[1] - elem_sequencial[0]
+blocks.append(elem_sequencial[0])
 for i in range (1,N_elem-1):
-    if (elem_sequencia[i] - elem_sequencia[i-1]) == razao:
-        blocos.append(elem_sequencia[i])
+    if (elem_sequencial[i] - elem_sequencial[i-1]) == reason:
+        blocks.append(elem_sequencial[i])
     else:
-        razao = elem_sequencia[i+1] - elem_sequencia[i]
-        lista_de_blocos.append(blocos)
-        blocos.clear()
-        blocos.append(elem_sequencia[i])
-lista_de_blocos.append(blocos)
-if (elem_sequencia[N_elem-1] - elem_sequencia[N_elem-2]) == razao:
-    blocos.append(elem_sequencia[N_elem-1])
+        reason = elem_sequencial[i+1] - elem_sequencial[i]
+        list_of_blocks.append(blocks)
+        blocks.clear()
+        blocks.append(elem_sequencial[i])
+list_of_blocks.append(blocks)
+if (elem_sequencial[N_elem-1] - elem_sequencial[N_elem-2]) == reason:
+    blocks.append(elem_sequencial[N_elem-1])
 else:
-    lista_de_blocos.append(blocos)
-    blocos.clear()
-    blocos.append(elem_sequencia[N_elem-1])
-print(len(lista_de_blocos))
+    list_of_blocks.append(blocks)
+    blocks.clear()
+    blocks.append(elem_sequencial[N_elem-1])
+print(len(list_of_blocks))
