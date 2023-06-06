@@ -1,43 +1,25 @@
-def CreateTemp(temperature):
-    for k in range(N_Temperatures):
-        temperature.append(int(input()))
-        
-def AdditionTemp(temperatura,somas,soma):
-    for j in range(M_intervals):
-        soma += temperatura[j]
-    somas.append(soma)
-    for i in range(N_Temperatures-M_intervals):
-        soma += temperatura[i+M_intervals] - temperatura[i]
-        somas.append(soma)
-        
-def SetBiggerLower(bigger,lower,adds):
-    for l in adds:
-        if l > bigger:
-            bigger = l
-        if l < lower:
-            lower = l    
-    list_lowers_biggers.append(int(lower/M_intervals))
-    list_lowers_biggers.append(int(bigger/M_intervals))    
-        
+def calculate_temperature_averages(temperatures, interval):
+    n = len(temperatures)
+    sum_interval = sum(temperatures[:interval])
+    averages = [sum_interval // interval]
 
-list_lowers_biggers = []
-cont=1
+    for i in range(0, n - interval):
+        sum_interval += temperatures[i + interval] - temperatures[i]
+        averages.append(sum_interval // interval)
+
+    return averages
+
 N_Temperatures, M_intervals = map(int, input().split())
-while N_Temperatures!=0 and M_intervals!=0:
-    temperature = []
-    adds = []
-    add = 0
-    bigger = -201
-    lower = 201
+cont = 1
+
+while N_Temperatures != 0 and M_intervals != 0:
+    temperatures = [int(input()) for i in range(N_Temperatures)]
     
-    CreateTemp(temperature)
-    AdditionTemp(temperature,adds,add)    
-    SetBiggerLower(bigger,lower,adds)
+    min_average, max_average = min(calculate_temperature_averages(temperatures, M_intervals)), max(calculate_temperature_averages(temperatures, M_intervals))
+    
+    print("Teste", cont)
+    print(min_average, max_average)
+    print()
+    cont += 1
     
     N_Temperatures, M_intervals = map(int, input().split())
-
-for i in range(0,len(list_lowers_biggers),2):
-    print("Test {}".format(cont))
-    print(list_lowers_biggers[i], list_lowers_biggers[i+1])
-    print()
-    cont+=1
