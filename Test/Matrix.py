@@ -12,18 +12,20 @@ print(matriz4)
 print("\n\n")
 # Adicionando elementos em uma matriz vazia
 matriz = []
-for linha in range(3):
+for i in range(3):
     lista = []
-    for coluna in range(3):
+    for j in range(3):
         elementoInteiro = int(input("Digite um numero: "))
         lista.append(elementoInteiro)
     matriz.append(lista)
-print(matriz)
+
+for i in range(len(matriz)):
+    print(matriz[i])
 
 matriz = []
-for linha in range(3):
+for i in range(3):
     lista = []
-    for coluna in range(3):
+    for j in range(3):
         lista.append(int(input("Digite um numero: ")))
     matriz.append(lista)
 print(matriz)
@@ -31,11 +33,11 @@ print(matriz)
 
 print("\n\n")
 # Substituindo elementos de uma matriz pre-criada
-matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+matriz = [[3, 3, 3], [2, 2, 2], [3, 3, 3]]
 print(matriz)
-for linha in range(3):
-    for coluna in range(3):
-        matriz[linha][coluna] = int(input("Digite um numero diferente de Zero: "))
+for i in range(3):
+    for j in range(3):
+        matriz[i][j] = int(input("Digite um numero diferente de Zero: "))
 print(matriz)
 
 matriz[1][1] = int(input("Digite outro numero: "))
@@ -65,10 +67,10 @@ print(matriz)
 print("\n\n")
 # Percorrendo uma matriz
 matriz = [[1, 2, 3], [4, "Pedro", 6], ["Gabriel", 8], [9,10]]
-for linha in range(len(matriz)):
-    for coluna in range(len(matriz[linha])):
-        print(matriz[linha][coluna])
+for i in range(len(matriz)):
+    for j in range(len(matriz[i])):
+        print(matriz[i][j])
     
-for linha in matriz:
-    for elemento_coluna in linha:
+for i in matriz:
+    for elemento_coluna in i:
         print(elemento_coluna)
