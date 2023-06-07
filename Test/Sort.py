@@ -7,7 +7,7 @@ for i in range(len(lista)):
             aux = lista[j]
             lista[j] = lista[j+1]
             lista[j+1] = aux
-print(lista)
+        print(lista)
 
 
 print("\n\n")
@@ -24,4 +24,4 @@ for i in range(0, len(lista)):
         aux = lista[i]
         lista[i] = lista[menor_index]
         lista[menor_index] = aux
-print(lista)
+    print(lista)

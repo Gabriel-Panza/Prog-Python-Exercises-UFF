@@ -13,21 +13,21 @@ print("\n\n")
 # Adicionando elementos em uma matriz vazia
 matriz = []
 for i in range(3):
-    lista = []
+    linha = []
     for j in range(3):
         elementoInteiro = int(input("Digite um numero: "))
-        lista.append(elementoInteiro)
-    matriz.append(lista)
+        linha.append(elementoInteiro)
+    matriz.append(linha)
 
 for i in range(len(matriz)):
     print(matriz[i])
 
 matriz = []
 for i in range(3):
-    lista = []
+    linha = []
     for j in range(3):
-        lista.append(int(input("Digite um numero: ")))
-    matriz.append(lista)
+        linha.append(int(input("Digite um numero: ")))
+    matriz.append(linha)
 print(matriz)
 
 
@@ -70,7 +70,7 @@ matriz = [[1, 2, 3], [4, "Pedro", 6], ["Gabriel", 8], [9,10]]
 for i in range(len(matriz)):
     for j in range(len(matriz[i])):
         print(matriz[i][j])
-    
+print()
 for i in matriz:
     for elemento_coluna in i:
         print(elemento_coluna)

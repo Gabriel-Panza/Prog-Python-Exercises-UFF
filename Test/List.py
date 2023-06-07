@@ -56,6 +56,6 @@ print("\n\n")
 lista = [1, 2, 3, 4, "Pedro", 6, "Gabriel", 8, 9, 10]
 for index in range(len(lista)):
     print(lista[index])
-    
+print()
 for elemento in lista:
     print(elemento)
