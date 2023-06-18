@@ -13,3 +13,4 @@ while error!= 0 and value != 0:
     else:
         print(0)
     error, value = map(int, input().split())
+    
