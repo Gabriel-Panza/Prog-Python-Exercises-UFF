@@ -17,8 +17,8 @@ def main():
         start, end = 1, 1
         higher = [value, 1, 1]
         while n != 0:
-            game = list(map(int, input().split()))
-            saldo = game[0] - game[1]
+            game1,game2 = map(int, input().split())
+            saldo = game1 - game2
             result = saldo + value
             index = len(list)
             if saldo > result:
