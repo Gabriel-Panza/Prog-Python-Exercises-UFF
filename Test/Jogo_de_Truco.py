@@ -1,38 +1,22 @@
-# Função para calcular o valor simbólico de uma carta
-def valor_simbolico(carta):
-    if carta == 1:
-        return 0  # Ás
-    elif carta == 2 or carta == 3:
-        return 1  # 2 e 3
-    elif carta >= 4 and carta <= 7:
-        return 2  # 4, 5, 6 e 7
+jogos = int(input())
+tim = 0
+maia = 0
+ordem = [4, 5, 6, 7, 12, 11, 13, 1, 2, 3]
+
+for i in range(jogos):
+    jog1 = 0
+    jog2 = 0
+    cartas = list(map(int, input().split()))
+    for j in range(3):
+        ind_um = ordem.index(cartas[j])
+        ind_dois = ordem.index(cartas[j+3])
+        if ind_um == ind_dois or ind_um > ind_dois:
+            jog1 += 1
+        else:
+            jog2 += 1
+    if jog1 > jog2 or jog1 == jog2:
+        tim += 1
     else:
-        return 3  # Q, J, K e A
+        maia += 1
 
-# Leitura da entrada
-N = int(input())
-
-# Inicialização das variáveis
-vitorias_tim = 0
-vitorias_maia = 0
-
-# Processamento das partidas
-if (N%2==0):
-    N = N//2
-else:
-    N = N//2 + 1
-for _ in range(N):
-    cartas_tim = list(map(int, input().split()))
-    cartas_maia = list(map(int, input().split()))
-
-    if all(carta == 0 for carta in cartas_maia):
-        vitorias_tim += 1
-    else:
-        for i in range(3):
-            if valor_simbolico(cartas_tim[i]) > valor_simbolico(cartas_maia[i]):
-                vitorias_tim += 1
-            else:
-                vitorias_maia += 1
-
-# Impressão do resultado
-print(vitorias_tim, vitorias_maia//2)
+print(f'{tim} {maia}')
