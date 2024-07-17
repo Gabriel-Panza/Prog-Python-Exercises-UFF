@@ -24,7 +24,7 @@ t.goto(0, 0)
 t.setheading(0)
 t.color("white")
 t.setposition(0,125)
-t.write("Calouros", align="center", font=("Arial", 20, "bold"))
+t.write("Amanda", align="center", font=("Arial", 20, "bold"))
 
 # Manter a janela aberta
 turtle.done()
