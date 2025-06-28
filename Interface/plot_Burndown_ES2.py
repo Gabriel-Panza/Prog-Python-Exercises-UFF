@@ -71,16 +71,29 @@ def gerar_grafico_burndown(esforco_planejado_restante, esforco_real_restante, ti
 
 # Exemplo: Projeto correndo como esperado ao longo de 5 semanas
 print("Gerando 'Sprint 1' de 5 semanas sem atraso")
-# Esforço planejado restante ao final de cada semana (Semana 0 é o início)
 planejado_semanal = [126.0, 100.8, 75.6, 50.4, 25.2, 0]
 # Esforço real restante ao final de cada semana
 real_semanal = [126.0, 77.0, 77.0, 77.0, 35.0, 0]
-gerar_grafico_burndown(planejado_semanal, real_semanal, "Burndown da Sprint 1 (5 Semanas)")
+gerar_grafico_burndown(planejado_semanal, real_semanal, "Burndown da Sprint 1 (5 Semanas) - Em dia")
 
-# Exemplo 2: Projeto atrasado em uma sprint de 5 semanas
+# Exemplo 2: Projeto atrasado em uma sprint de 4 semanas
 print("\nGerando 'Sprint 2' de 4 semanas com Atraso")
-# Esforço planejado restante ao final de cada semana (Semana 0 é o início)
 planejado_semanal_atraso = [105, 78.75, 52.5, 26.25, 0]
 # Esforço real restante ao final de cada semana
 real_semanal_atraso = [105, 105, 105, 52.5, 26.25]
 gerar_grafico_burndown(planejado_semanal_atraso, real_semanal_atraso, "Burndown da Sprint 2 (4 Semanas) - Atrasado")
+
+# Exemplo 3: Projeto em dia em uma sprint de 4 semanas
+print("\nGerando 'Sprint 3' de 4 semanas em dia")
+planejado_semanal_atraso = [285.25, 213.9375, 142.625, 71.3125, 0]
+# Esforço real restante ao final de cada semana
+real_semanal_atraso = [285.25, 285.25, 285.25, 65.25, 0]
+gerar_grafico_burndown(planejado_semanal_atraso, real_semanal_atraso, "Burndown da Sprint 3 (4 Semanas) - Em dia")
+
+# Exemplo 4: Projeto em dia ao longo das 3 sprints
+print("\nGerando 'Sprint 1-3' de 13 semanas em dia")
+# Dados consolidados das 3 Sprints
+planejado_total = [516.25, 491.05, 465.85, 440.65, 415.45, 390.25, 364.0, 337.75, 311.5, 285.25, 213.9375, 142.625, 71.3125, 0.0]
+# Esforço real restante ao final de cada semana, consolidado
+real_total = [516.25, 467.25, 467.25, 467.25, 425.25, 390.25, 390.25, 390.25, 337.75, 311.5, 311.5, 311.5, 91.5, 26.25]
+gerar_grafico_burndown(planejado_total, real_total, "Burndown da Sprint 1-3 (13 Semanas) - Em dia")
