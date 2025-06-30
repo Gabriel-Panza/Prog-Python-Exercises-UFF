@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden; /* Esconde os confetes que saem da tela */
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 50px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 550px;
+            transform: scale(0.5);
+            opacity: 0;
+            animation: appear 1s ease-out 0.5s forwards;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes appear {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #d9538d;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #d9538d;
+        }
+
+        /* Animação de Confetes */
+        .confetti {
+            width: 10px;
+            height: 10px;
+            background-color: #f0a;
+            position: absolute;
+            top: -20px;
+            animation: fall 5s infinite linear;
+        }
+
+        @keyframes fall {
+            from { top: -20px; }
+            to { top: 110vh; }
+        }
+
+        .confetti:nth-child(1) { left: 10%; animation-delay: 0s; background-color: #ffc300; }
+        .confetti:nth-child(2) { left: 20%; animation-delay: -2s; background-color: #ff5733; }
+        .confetti:nth-child(3) { left: 30%; animation-delay: -1s; background-color: #c70039; }
+        .confetti:nth-child(4) { left: 40%; animation-delay: -1.5s; background-color: #900c3f; }
+        .confetti:nth-child(5) { left: 50%; animation-delay: -3s; background-color: #581845; }
+        .confetti:nth-child(6) { left: 60%; animation-delay: -2.5s; background-color: #1abc9c; }
+        .confetti:nth-child(7) { left: 70%; animation-delay: -0.5s; background-color: #2ecc71; }
+        .confetti:nth-child(8) { left: 80%; animation-delay: -3.5s; background-color: #3498db; }
+        .confetti:nth-child(9) { left: 90%; animation-delay: -4s; background-color: #9b59b6; }
+        .confetti:nth-child(10) { left: 95%; animation-delay: -5s; background-color: #f1c40f; }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Feliz Aniversário, pai!</h1>
+        <p>
+            Te desejo tudo de bom e espero que o seu dia hoje seja especial, repleto de <span class="highlight">amor</span>, <span class="highlight">paz</span> e <span class="highlight">felicidade</span>! Você é uma pessoa incrível e merece um dia tão incrível quanto.
+        </p>
+        <p>
+            Assinado pelo seu querido filho, com saúde e sucesso, Gabriel! 🎉
+        </p>
+        
+        <a href="/desligar" style="display: block; margin-top: 20px; font-size: 0.9rem; color: #888;">Fechar Surpresa</a>
+
+    </div>
+
+    <div class="confetti"></div> <div class="confetti"></div> <div class="confetti"></div>
+    <div class="confetti"></div> <div class="confetti"></div> <div class="confetti"></div>
+    <div class="confetti"></div> <div class="confetti"></div> <div class="confetti"></div>
+    <div class="confetti"></div>
+
+</body>
+</html>
